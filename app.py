@@ -8,6 +8,14 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+st.markdown("""
+<style>
+  footer {visibility: hidden;}
+  #MainMenu {visibility: hidden;}
+  header {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)
+
 from config import GROQ_API_KEY, SUPABASE_URL, SUPABASE_KEY, DIET_OPTIONS, CUISINE_OPTIONS, MEAL_TYPES, DAYS, ALLERGY_OPTIONS
 from ai.recipe_agent import generate_recipe, suggest_recipes_from_ingredients
 from ai.meal_planner import generate_weekly_plan
