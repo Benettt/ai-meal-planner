@@ -13,6 +13,10 @@ st.markdown("""
   footer {visibility: hidden;}
   #MainMenu {visibility: hidden;}
   header {visibility: hidden;}
+  [data-testid="stToolbar"] {visibility: hidden;}
+  .viewerBadge_container__1QSob {display: none;}
+  .styles_viewerBadge__1yB5_ {display: none;}
+  #stDecoration {display: none;}
 </style>
 """, unsafe_allow_html=True)
 
