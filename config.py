@@ -5,11 +5,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_secret(key: str) -> str:
-    """Get secret from .env locally or st.secrets on Streamlit Cloud."""
+    # First try st.secrets (Streamlit Cloud)
     try:
-        return st.secrets[key]
+        val = st.secrets.get(key)
+        if val:
+            return val
     except Exception:
-        return os.getenv(key, "")
+        pass
+    # Then try .env (local)
+    return os.getenv(key, "")
 
 GROQ_API_KEY = get_secret("GROQ_API_KEY")
 SUPABASE_URL = get_secret("SUPABASE_URL")
